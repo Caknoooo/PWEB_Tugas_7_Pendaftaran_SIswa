@@ -3,12 +3,12 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$db_name = "form_page";
+$nama_database = "pendaftaran_siswa";
 
-$db = mysqli_connect($server, $user, $password, $db_name);
+$db = mysqli_connect($server, $user, $password, $nama_database);
 
-if(!$db) {
-  die("Failed to connect database " . mysqli_connect_error());
+if( !$db ){
+    die("Gagal terhubung dengan database: " . mysqli_connect_error());
 }
 
 ?>

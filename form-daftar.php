@@ -1,63 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pendaftaran Siswa Baru | SMK Coding</title>
 
-  <title>Formulir Pendaftaran Siswa Baru | SMK Coding</title>
-</head>
-<body>
-  <header>
-    <h3>Formulir Pendaftaran Siswa Baru</h3>
-  </header>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto my-5">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h3 class="text-3xl mb-3 text-center">Pendaftaran Siswa Baru</h3>
+          <form action="proses-daftar.php" method="POST">
+            <div class="form-group mb-3">
+              <label for="nama" class="font-medium text-gray-700 block mb-2">Nama Lengkap</label>
+              <input
+                type="text"
+                class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="nama"
+                name="nama"
+                required
+              />
+            </div>
 
-  <form action="proses-registrasi.php" method="POST">
-    <fieldset>
-      <p>
-        <label for="nama">Nama: </label>
-        <input type="text" name="nama" id="Masukkan Nama Lengkap">
-      </p>
+            <div class="form-group mb-3">
+              <label for="alamat" class="font-medium text-gray-700 block mb-2">Alamat</label>
+              <textarea
+                class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="alamat"
+                name="alamat"
+                required
+              ></textarea>
+            </div>
 
-      <p>
-        <label for="alamat">Alamat: </label>
-        <textarea name="alamat" id="" cols="30" rows="10"></textarea>
-      </p>
+            <div class="form-group mb-3">
+              <label for="jenis_kelamin" class="font-medium text-gray-700 block mb-2">Jenis Kelamin</label>
+              <select
+                class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="jenis_kelamin"
+                name="jenis_kelamin"
+                required
+              >
+                <option value="">-- Pilih Jenis Kelamin --</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+              </select>
+            </div>
 
-      <p>
-        <label for="jenis_kelamin">Jenis Kelamin:</label>
-        <label for="">
-          <input type="radio" name="jenis_kelamin" value="laki-laki">
-          Laki-laki
-        </label>
-        <label for="">
-          <input type="radio" name="jenis_kelamin" value="perempuan">
-          Perempuan
-        </label>
-      </p>
+            <div class="form-group mb-3">
+              <label for="agama" class="font-medium text-gray-700 block mb-2">Agama</label>
+              <select class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="agama" name="agama" required>
+                <option value="">-- Pilih Agama --</option>
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Katolik">Katolik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Buddha">Buddha</option>
+                <option value="Kong Hu Cu">Kong Hu Cu</option>
+              </select>
+            </div>
 
-      <p>
-        <label for="agama">Agama: </label>
-        <select name="agama">
-          <option>Islam</option>
-          <option>Kristen</option>
-          <option>Hindu</option>
-          <option>Budha</option>
-          <option>Atheis</option>
-        </select>
-      </p>
+            <div class="form-group">
+              <label for="sekolah_asal" class="block font-medium text-gray-700">Sekolah Asal</label>
+              <input type="text" id="sekolah_asal" name="sekolah_asal" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
 
-      <p>
-        <label for="sekolah_asal">Sekolah Asal: </label>
-        <input type="text" name="sekolah_asal" placeholder="nama sekolah" />
-      </p>
-      
-      <p>
-        <input type="submit" value="Daftar" name="daftar" />
-      </p>
-
-    </fieldset>
-  </form>
-</body>
+            <p class="my-10">
+              <input type="submit" value="Simpan" name="simpan" class="py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded">
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
